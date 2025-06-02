@@ -1,100 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Exercícios Interativos JS</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      text-align: center;
-    }
-    button {
-      margin: 5px;
-      padding: 10px;
-      font-size: 14px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Exercícios Interativos JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #747272;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Exercícios 04 em JavaScript</h1>
+    <h1>Exercícios 04 em JavaScript</h1>
 
-  <div id="botoes"></div>
+    <div id="botoes"></div>
 
-  <script>
-    const exercicios = [
-      () => {
-        let num = Number(prompt("Digite um número:"));
-        alert(num > 20 ? "A metade do número é: " + (num / 2) : "O número é: " + num);
-      },
-      () => {
-        let resposta = prompt("Qual é a capital do Brasil?").trim().toLowerCase();
-        alert((resposta === "brasília" || resposta === "brasilia") ? "Resposta certa!" : "Resposta errada.");
-      },
-      () => {
-        let num = Number(prompt("Digite um número:"));
-        alert(num % 2 === 0 ? "O número é par." : "O número é ímpar.");
-      },
-      () => {
-        let num = Number(prompt("Digite um número:"));
-        alert(num % 4 === 0 && num % 5 === 0 ? "Valor divisível por 4 e 5: " + num : "Valor não é divisível por 4 e 5.");
-      },
-      () => {
-        let notas = [];
-        for (let i = 0; i < 4; i++) notas.push(Number(prompt(`Digite a nota ${i + 1}:`)));
-        let media = notas.reduce((a, b) => a + b, 0) / 4;
-        alert(media >= 5 ? `Aprovado com média ${media.toFixed(2)}` : `Reprovado com média ${media.toFixed(2)}`);
-      },
-      () => {
-        let a = Number(prompt("Digite o primeiro valor:"));
-        let b = Number(prompt("Digite o segundo valor:"));
-        alert("Diferença: " + Math.abs(a - b));
-      },
-      () => {
-        let num = Number(prompt("Digite um número:"));
-        alert("O módulo do número é: " + Math.abs(num));
-      },
-      () => {
-        let num = Number(prompt("Digite um número:"));
-        alert(num >= 1 && num <= 10 ? "O número está na faixa de 1 a 10." : "O número está fora da faixa de 1 a 10.");
-      },
-      () => {
-        let num = Number(prompt("Digite um número:"));
-        alert(num > 0 ? "Número positivo." : num < 0 ? "Número negativo." : "Número nulo.");
-      },
-      () => {
-        let a = Number(prompt("Digite o primeiro número:"));
-        let b = Number(prompt("Digite o segundo número:"));
-        alert(b !== 0 && a % b === 0 ? "O segundo número é divisor do primeiro." : "O segundo número não é divisor do primeiro.");
-      },
-      () => {
-        let num = Number(prompt("Digite um número de 3 dígitos:"));
-        alert("Algarismo das centenas: " + Math.floor(Math.abs(num) / 100));
-      },
-      () => {
-        let nums = [];
-        for (let i = 0; i < 5; i++) nums.push(Number(prompt(`Digite o número ${i + 1}:`)));
-        alert(`Maior número: ${Math.max(...nums)}\nMenor número: ${Math.min(...nums)}`);
-      },
-      () => {
-        let a = Number(prompt("Digite o valor A:"));
-        let b = Number(prompt("Digite o valor B:"));
-        let c = Number(prompt("Digite o valor C:"));
-        let ordenados = [a, b, c].sort((x, y) => x - y);
-        alert("Valores em ordem crescente: " + ordenados.join(", "));
-      }
-    ];
+    <script>
+        const exercicios = [
+            () => {
+                let num = Number(prompt("Digite um número:"));
+                alert(num > 20 ? "A metade do número é: " + (num / 2) : "O número é: " + num);
+            },
 
-    const container = document.getElementById("botoes");
-    exercicios.forEach((_, i) => {
-      let btn = document.createElement("button");
-      btn.textContent = `Exercício ${i + 1}`;
-      btn.onclick = exercicios[i];
-      container.appendChild(btn);
-    });
-  </script>
+
+            () => {
+                let resposta = prompt("Qual é a capital do Brasil?").trim().toLowerCase();
+                alert((resposta === "brasília" || resposta === "brasilia") ? "Resposta certa!" : "Resposta errada.");
+            },
+
+
+            () => {
+                let num = Number(prompt("Digite um número:"));
+                alert(num % 2 === 0 ? "O número é par." : "O número é ímpar.");
+            },
+
+
+            () => {
+                let num = Number(prompt("Digite um número:"));
+                alert(num % 4 === 0 && num % 5 === 0 ? "Valor divisível por 4 e 5: " + num : "Valor não é divisível por 4 e 5.");
+            },
+
+
+            () => {
+                let notas = [];
+                for (let i = 0; i < 4; i++) notas.push(Number(prompt(`Digite a nota ${i + 1}:`)));
+                let media = notas.reduce((a, b) => a + b, 0) / 4;
+                alert(media >= 5 ? `Aprovado com média ${media.toFixed(2)}` : `Reprovado com média ${media.toFixed(2)}`);
+            },
+
+
+            () => {
+                let a = Number(prompt("Digite o primeiro valor:"));
+                let b = Number(prompt("Digite o segundo valor:"));
+                alert("Diferença: " + Math.abs(a - b));
+            },
+
+
+            () => {
+                let num = Number(prompt("Digite um número:"));
+                alert("O módulo do número é: " + Math.abs(num));
+            },
+
+
+            () => {
+                let num = Number(prompt("Digite um número:"));
+                alert(num >= 1 && num <= 10 ? "O número está na faixa de 1 a 10." : "O número está fora da faixa de 1 a 10.");
+            },
+
+
+            () => {
+                let num = Number(prompt("Digite um número:"));
+                alert(num > 0 ? "Número positivo." : num < 0 ? "Número negativo." : "Número nulo.");
+            },
+
+
+            () => {
+                let a = Number(prompt("Digite o primeiro número:"));
+                let b = Number(prompt("Digite o segundo número:"));
+                alert(b !== 0 && a % b === 0 ? "O segundo número é divisor do primeiro." : "O segundo número não é divisor do primeiro.");
+            },
+
+
+            () => {
+                let num = Number(prompt("Digite um número de 3 dígitos:"));
+                alert("Algarismo das centenas: " + Math.floor(Math.abs(num) / 100));
+            },
+
+
+            () => {
+                let nums = [];
+                for (let i = 0; i < 5; i++) nums.push(Number(prompt(`Digite o número ${i + 1}:`)));
+                alert(`Maior número: ${Math.max(...nums)}\nMenor número: ${Math.min(...nums)}`);
+            },
+
+
+            () => {
+                let a = Number(prompt("Digite o valor A:"));
+                let b = Number(prompt("Digite o valor B:"));
+                let c = Number(prompt("Digite o valor C:"));
+                let ordenados = [a, b, c].sort((x, y) => x - y);
+                alert("Valores em ordem crescente: " + ordenados.join(", "));
+            }
+        ];
+
+        const container = document.getElementById("botoes");
+        exercicios.forEach((_, i) => {
+            let btn = document.createElement("button");
+            btn.textContent = `Exercício ${i + 1}`;
+            btn.onclick = exercicios[i];
+            container.appendChild(btn);
+        });
+    </script>
 </body>
+
 </html>
